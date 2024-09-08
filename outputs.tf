@@ -1,3 +1,7 @@
+output "vpc_id" {
+  value = aws_vpc.main.id
+}
+
 output "pri_sub_nw_addr_1" {
   description = "The CIDR block of the first private subnet"
   value       = aws_subnet.private_subnet_1.cidr_block
