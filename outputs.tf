@@ -22,15 +22,15 @@ output "public_subnet_ids" {
 output "private_subnet_cidrs" {
   description = "List of CIDR blocks for private subnets"
   value       = [
-    aws_subnet.private_subnet_1.cidr_block,
-    aws_subnet.private_subnet_2.cidr_block
+    aws_subnet.private_subnet_1.cidr_block.id,
+    aws_subnet.private_subnet_2.cidr_block.id
   ]
 }
 
 output "public_subnet_cidrs" {
   description = "List of CIDR blocks for public subnets"
   value       = [
-    aws_subnet.public_subnet_1.cidr_block,
-    aws_subnet.public_subnet_2.cidr_block
+    aws_subnet.public_subnet_1.cidr_block.id,
+    aws_subnet.public_subnet_2.cidr_block.id
   ]
 }
