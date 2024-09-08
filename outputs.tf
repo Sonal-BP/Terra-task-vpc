@@ -1,23 +1,36 @@
 output "vpc_id" {
-  value = aws_vpc.main.id
+  description = "The ID of the VPC"
+  value       = aws_vpc.main.id
 }
 
-output "pri_sub_nw_addr_1" {
-  description = "The CIDR block of the first private subnet"
-  value       = aws_subnet.private_subnet_1.cidr_block
+output "private_subnet_ids" {
+  description = "List of private subnet IDs"
+  value       = [
+    aws_subnet.private_subnet_1.id,
+    aws_subnet.private_subnet_2.id
+  ]
 }
 
-output "pri_sub_nw_addr_2" {
-  description = "The CIDR block of the second private subnet"
-  value       = aws_subnet.private_subnet_2.cidr_block
+output "public_subnet_ids" {
+  description = "List of public subnet IDs"
+  value       = [
+    aws_subnet.public_subnet_1.id,
+    aws_subnet.public_subnet_2.id
+  ]
 }
 
-output "pub_sub_nw_addr_1" {
-  description = "The CIDR block of the first public subnet"
-  value       = aws_subnet.public_subnet_1.cidr_block
+output "private_subnet_cidrs" {
+  description = "List of CIDR blocks for private subnets"
+  value       = [
+    aws_subnet.private_subnet_1.cidr_block,
+    aws_subnet.private_subnet_2.cidr_block
+  ]
 }
 
-output "pub_sub_nw_addr_2" {
-  description = "The CIDR block of the second public subnet"
-  value       = aws_subnet.public_subnet_2.cidr_block
+output "public_subnet_cidrs" {
+  description = "List of CIDR blocks for public subnets"
+  value       = [
+    aws_subnet.public_subnet_1.cidr_block,
+    aws_subnet.public_subnet_2.cidr_block
+  ]
 }
