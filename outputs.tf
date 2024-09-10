@@ -14,3 +14,7 @@ output "internet_gateway_id" {
   description = "ID of the Internet Gateway"
   value       = aws_internet_gateway.main.id
 }
+output "ec2_sg_id" {
+  description = "Security group ID for ASG"
+  value       = aws_security_group.ec2_sg.id
+}
